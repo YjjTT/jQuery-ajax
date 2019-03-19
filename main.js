@@ -4,13 +4,17 @@ window.jQuery = function (nodeOrSelector){
     return nodes
 }
 
-window.jQuery.ajax = function(options){
-    let url = options.url
-    let method = options.method
-    let body = options.body
-    let successFn = options.successFn
-    let failFn = options.failFn
-    let headers = options.headers
+window.jQuery.ajax = function({url ,method, body, successFn, failFn, headers}){
+    // let url = options.url
+    // let method = options.method
+    // let body = options.body
+    // let successFn = options.successFn
+    // let failFn = options.failFn
+    // let headers = options.headers
+
+    // ES6 析构赋值
+    // let {url ,method, body, successFn, failFn, headers} = options
+
     let request = new XMLHttpRequest()
     request.open(method, url)
     for(let key in headers){
